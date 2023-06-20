@@ -3,8 +3,7 @@ import { expect, test } from "@playwright/test";
 type Network = { name: string; url: string };
 
 export const networks: Network[] = [
-  { name: "Rococo", url: "/" },
-  { name: "Westend", url: "/westend" },
+  { name: "Symphonie", url: "/" },
 ];
 
 const networkSelectId = "network-select";

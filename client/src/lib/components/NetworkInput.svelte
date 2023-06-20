@@ -1,6 +1,6 @@
 <script lang="ts">
   import { testnet } from "$lib/utils/stores";
-  import { Rococo, getChainName } from "../utils/networkData";
+  import {getChainName, Symphonie} from "../utils/networkData";
   import Chevron from "./icons/Chevron.svelte";
 
   export let network: number = -1;
@@ -10,7 +10,7 @@
   let customValue: boolean = false;
   let customBtnMessage = "Use preselected chains";
   $: customBtnMessage = !customValue ? "Use custom chain id" : "Use preselected chains";
-  $: customValue = !getChainName(Rococo, network);
+  $: customValue = !getChainName(Symphonie, network);
 
   function switchCustomValue() {
     if (!customValue) {
@@ -68,9 +68,9 @@
       </ul>
     </div>
   {/if}
-  <div class="custom-chain-switch" on:click={switchCustomValue} data-testid="custom-network-button">
+  <!--<div class="custom-chain-switch" on:click={switchCustomValue} data-testid="custom-network-button">
     &#8594; {customBtnMessage}
-  </div>
+  </div>-->
 </div>
 
 <style lang="postcss">
