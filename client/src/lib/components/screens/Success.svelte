@@ -11,9 +11,9 @@
 <div class="message">
   Successfully sent {$testnet.currency} to your address.
 </div>
-<a href={`${$testnet.explorer}/extrinsic/${hash}`} data-testid="success-button" target="_blank" rel="noreferrer">
+<!--<a href={`${$testnet.explorer}/extrinsic/${hash}`} data-testid="success-button" target="_blank" rel="noreferrer">
   <button class="submit-btn"> See transaction details </button>
-</a>
+</a>-->
 
 <style lang="postcss">
   .message {
