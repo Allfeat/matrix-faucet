@@ -16,6 +16,17 @@ export interface NetworkData {
   balanceCap: number;
 }
 
+const harmonie: NetworkData = {
+  balanceCap: 1000,
+  chains: [{ name: "Harmonie Testnet", id: -1 }],
+  currency: "AFT",
+  decimals: 18,
+  dripAmount: "10",
+  explorer: "https://app.allfeat.network",
+  networkName: "Allfeat",
+  rpcEndpoint: "wss://harmonie-endpoint-02.allfeat.io/",
+};
+
 const rococo: NetworkData = {
   balanceCap: 1000,
   chains: [
@@ -92,7 +103,7 @@ const e2e: NetworkData = {
   rpcEndpoint: "ws://host.docker.internal:9933/",
 };
 
-export const networks: Record<string, NetworkData> = { rococo, versi, westend, e2e, trappist, paseo };
+export const networks: Record<string, NetworkData> = { harmonie, rococo, versi, westend, e2e, trappist, paseo };
 
 export function getNetworkData(networkName: string): NetworkData {
   if (!Object.keys(networks).includes(networkName)) {
