@@ -39,7 +39,7 @@ export class PolkadotActions {
     });
 
     try {
-      const keyring = new Keyring({ type: "sr25519" });
+      const keyring = new Keyring({ type: "ethereum" });
 
       waitReady().then(() => {
         this.account = keyring.addFromMnemonic(mnemonic);
