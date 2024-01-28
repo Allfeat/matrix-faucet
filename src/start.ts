@@ -1,6 +1,5 @@
 import "reflect-metadata";
 
-import { startBot } from "./bot";
 import { AppDataSource } from "./db/dataSource";
 import polkadotActions from "./dripper/polkadot/PolkadotActions";
 import { startServer } from "./server";
@@ -9,7 +8,7 @@ import { startServer } from "./server";
   await AppDataSource.initialize();
   // Waiting for bot to start first.
   // Thus, listening to port on the server side can be treated as "ready" signal.
-  await startBot();
+  // await startBot();
   await polkadotActions.isReady;
   startServer();
 })().catch((e) => {
