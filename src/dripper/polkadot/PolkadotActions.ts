@@ -41,14 +41,17 @@ export class PolkadotActions {
     try {
       const keyring = new Keyring({ type: "ethereum" });
 
+      const index = 0;
+      const derivationPath = "m/44'/60'/0'/0/" + index;
+
       waitReady().then(() => {
-        this.account = keyring.addFromMnemonic(mnemonic);
+        this.account = keyring.addFromUri(`${mnemonic}/${derivationPath}`);
 
         // We do want the following to just start and run
         // TODO: Adding a subscription would be better but the server supports on http for now
         const updateFaucetBalance = (log = false) =>
           this.updateFaucetBalance().then(() => {
-            if (log) logger.info("Fetched faucet balance 💰");
+            if (log) logger.info("Fetched" + this.account?.address + "faucet balance 💰");
             setTimeout(updateFaucetBalance, balancePollIntervalMs);
           });
         updateFaucetBalance(true).then(makeReady);
@@ -202,7 +205,7 @@ export class PolkadotActions {
         throw new Error("account not ready");
       }
 
-      logger.info("💰 checking faucet balance");
+      logger.info("💰 checking faucet balance for " + this.account.address);
 
       // start a counter and log a timeout error if we didn't get an answer in time
       const balanceTimeout = rpcTimeout("balance");

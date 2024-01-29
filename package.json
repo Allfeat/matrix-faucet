@@ -82,7 +82,6 @@
     "joi": "^17.6.4",
     "lint-staged": "^12.3.8",
     "nodemon": "^2.0.19",
-    "simple-git-hooks": "^2.7.0",
     "supertest": "^6.3.3",
     "testcontainers": "^9.9.1",
     "ts-jest": "^29.0.5",
