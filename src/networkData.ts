@@ -22,7 +22,7 @@ const harmonie: NetworkData = {
   currency: "AFT",
   decimals: 18,
   dripAmount: "10",
-  explorer: "https://app.allfeat.network",
+  explorer: "https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fharmonie-endpoint-02.allfeat.io#/",
   networkName: "Allfeat",
   rpcEndpoint: "wss://harmonie-endpoint-02.allfeat.io/",
 };
